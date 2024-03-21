@@ -17,6 +17,7 @@
 		840E22CF2BACE09100B7B767 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E22CE2BACE09100B7B767 /* NotificationViewController.swift */; };
 		840E22D12BACE0A600B7B767 /* DirectMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E22D02BACE0A600B7B767 /* DirectMessageViewController.swift */; };
 		840E22D42BACE52F00B7B767 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E22D32BACE52F00B7B767 /* TweetTableViewCell.swift */; };
+		840E22D72BACEA2F00B7B767 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 840E22D62BACEA2F00B7B767 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E22D72BACEA2F00B7B767 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +121,9 @@
 			dependencies = (
 			);
 			name = twitterApp;
+			packageProductDependencies = (
+				840E22D62BACEA2F00B7B767 /* SnapKit */,
+			);
 			productName = twitterApp;
 			productReference = 840E22AE2BACDCB800B7B767 /* twitterApp.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +152,9 @@
 				Base,
 			);
 			mainGroup = 840E22A52BACDCB800B7B767;
+			packageReferences = (
+				840E22D52BACEA2F00B7B767 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 840E22AF2BACDCB800B7B767 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -403,6 +411,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		840E22D52BACEA2F00B7B767 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		840E22D62BACEA2F00B7B767 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 840E22D52BACEA2F00B7B767 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 840E22A62BACDCB800B7B767 /* Project object */;
 }

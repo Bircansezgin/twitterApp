@@ -15,10 +15,21 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private func configureNavigationBar() {
-        let size : CGFloat = 35
+        
+        // Twitter Logo
+        let size : CGFloat = 46
         let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
         logoImageView.contentMode = .scaleAspectFill
         logoImageView.image = UIImage(named: "twitterlogo")
+        
+        let middleView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        middleView.addSubview(logoImageView)
+        navigationItem.titleView = middleView
+        
+        
+        // ProfileImage
+        let profileImage = UIImage(systemName: "person")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(didTapProfileImage))
     }
     
     
@@ -33,6 +44,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupAddSubView()
+        configureNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,6 +69,15 @@ extension HomeViewController{
     }
 }
 
+
+// MARK: - @OBJC Funcs
+extension HomeViewController{
+    @objc func didTapProfileImage(){
+        let profileVC = ProfileViewController()
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+}
 
 
 

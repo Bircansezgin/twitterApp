@@ -14,6 +14,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private func configureNavigationBar() {
+        let size : CGFloat = 35
+        let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.image = UIImage(named: "twitterlogo")
+    }
+    
     
     private let timelineTableView: UITableView = {
         let tableView = UITableView()
@@ -57,7 +64,7 @@ extension HomeViewController{
 //M@ARK: - TableView Delegetes
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,7 +72,31 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
             return UITableViewCell()
         }
         
-        
+        cell.delegete = self
         return cell
     }
+    
+    
+   
+}
+
+// MARK: - Protocol
+extension HomeViewController: TweetTableViewCellDelegeteProtocol{
+    func tweetTableViewCellDidTapReply() {
+        print("Reply")
+    }
+    
+    func tweetTableViewCellDidTapRetweet() {
+        print("Retweet")
+    }
+    
+    func tweetTableViewCellDidTapLike() {
+        print("Like")
+    }
+    
+    func tweetTableViewCellDidTapShare() {
+        print("Share")
+    }
+    
+          
 }

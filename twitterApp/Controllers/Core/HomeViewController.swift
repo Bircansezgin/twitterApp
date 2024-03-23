@@ -75,6 +75,7 @@ extension HomeViewController{
     @objc func didTapProfileImage(){
         let profileVC = ProfileViewController()
         navigationController?.pushViewController(profileVC, animated: true)
+        
     }
     
 }

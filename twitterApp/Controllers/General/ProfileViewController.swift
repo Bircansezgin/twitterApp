@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ProfileViewController: UIViewController {
     
@@ -22,7 +23,10 @@ class ProfileViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         navigationItem.title = "Profile"
+        view.addSubview(profileTableView)
         configureTableViewDelegete()
+        configureConstrait()
+        setupHeaderView()
     }
     
 
@@ -35,6 +39,29 @@ extension ProfileViewController{
     private func configureTableViewDelegete(){
         profileTableView.delegate = self
         profileTableView.dataSource = self
+        
+        //
+    }
+    
+    
+    private func setupHeaderView(){
+        let headerView = ProfileTableViewHeader(frame: CGRect(x: 0, y: 0, width: profileTableView.frame.width, height: 380))
+        
+        profileTableView.tableHeaderView = headerView
+
+    }
+    
+    
+    // Constraits
+    private func configureConstrait(){
+        profileTableView.snp.makeConstraints { make in
+            make.leading.equalTo(view.snp.leading)
+            make.top.equalTo(view.snp.top)
+            make.trailing.equalTo(view.snp.trailing)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        
     }
 }
 
@@ -58,3 +85,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+
+
+
+
+
